@@ -1,0 +1,39 @@
+//global scss
+@import "./basics/variables.scss";
+@import "./basics/typographie.scss";
+@import "./basics/link.scss";
+@import "./basics/row.scss";
+@import "./basics/mixins.scss";
+@import "./basics/grid.scss";
+
+//pages
+@import "./pages/home.scss";
+
+//components
+@import "./components/dice.scss";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "roboto-mono", -apple-system, Roboto, sans-serif, serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: $color-text;
+    background: $background;
+  }
+}

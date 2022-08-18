@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "roboto-mono";
+  src: url("../fonts/roboto/robotomono-regular.ttf") format("truetype");
+}
+
+html,
+body {
+  font-family: "roboto-mono", -apple-system, Roboto, sans-serif, serif;
+}
