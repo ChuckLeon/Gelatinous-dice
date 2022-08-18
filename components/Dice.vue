@@ -1,9 +1,9 @@
 <template>
   <div class="dice" @click="roll">
       <div class="content">
-          <h3 class="text">Click to roll this {{ max }}</h3>
+          <h3 class="text">d{{ max }}</h3>
           <div :class="{numberContainer: true, rolling: isRolling}">
-            <p :class="{number: true, active: n === number}" v-for="n in parseInt(max)" :key="n">{{ n }}</p>                    
+            <p :class="{number: true, active: item === number}" v-for="item in shuffledArray" :key="item">{{ item }}</p>                    
           </div>
       </div>
   </div>
@@ -19,11 +19,24 @@ export default {
         return{
             number: 0,
             isRolling: false,
+            array: Array.from({length: this.max}, (_, i) => i + 1),            
+        }
+    },
+
+    computed:{
+        shuffledArray(){
+            return this.array.sort((a, b) => 0.5 - Math.random());
+        },
+        rollTime(){
+            return Math.min(this.max * 300 + 300, 2000);
         }
     },
 
     methods:{
-        roll(){            
+        roll(){       
+            this.number = 0;
+            this.isRolling = true;     
+
             var byteArray = new Uint8Array(1);
             window.crypto.getRandomValues(byteArray);
 
@@ -31,13 +44,11 @@ export default {
             var max_range = 256;
             if(byteArray[0] >= Math.floor(max_range/range) * range)
                 this.roll();
-
-            this.isRolling = true;
             
             setTimeout(() => {
                 this.isRolling = false;
                 this.number = parseInt(1 + (byteArray[0] % range));                
-            }, this.max * 300 + 300);                                         
+            }, this.rollTime);                                         
         }
     }
 }
