@@ -1,0 +1,9 @@
+footer {
+  padding: $base2x;
+
+  .row {
+    align-items: center;
+    border-top: 1px dashed $color-secondary;
+    justify-content: center;
+  }
+}
