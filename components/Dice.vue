@@ -1,7 +1,7 @@
 <template>
   <div class="dice" @click="roll">
       <div class="content">
-          <h3 class="text">d{{ max }}</h3>
+          <h3 class="text">D{{ max }}</h3>
           <div :class="{numberContainer: true, rolling: isRolling}">
             <p :class="{number: true, active: item === number}" v-for="item in shuffledArray" :key="item">{{ item }}</p>                    
           </div>
@@ -34,6 +34,7 @@ export default {
 
     methods:{
         roll(){       
+            //reset dice
             this.number = 0;
             this.isRolling = true;     
 
