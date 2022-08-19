@@ -1,8 +1,9 @@
 <template>
   <footer>
       <div class="row">
-        <p>Created by</p>
-        <a class="link" href="https://github.com/ChuckLeon/" target="_blank" rel="noreferrer noopener"> Charles Héon</a>
+        <p>If you like this tool, consider</p>
+        <a class="link" href="https://ko-fi.com/charlesheon" target="_blank" rel="noreferrer noopener"> buying me a coffee!</a>
+        <p> ☕️</p>
       </div>
   </footer>
 </template>
