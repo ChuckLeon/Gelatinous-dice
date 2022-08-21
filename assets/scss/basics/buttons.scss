@@ -1,0 +1,11 @@
+.btn {
+  cursor: pointer;
+  border: 1px dashed $color-secondary;
+  border-radius: 4px;
+  transition: all 300ms ease-in-out;
+  padding: $base $base3x;
+
+  &:hover {
+    background-color: $color-primary;
+  }
+}

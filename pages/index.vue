@@ -7,6 +7,10 @@
       <div :class="'grid grid--' + gridLength ">
         <Dice v-for="(dice, index) in diceToRoll" :key="index" :max="dice" :ref="index" />           
       </div>
+
+      <div class="btn game-roller" @click="rollAllDice" v-if="diceToRoll.length > 0">
+        Roll all!
+      </div>
     </div>
   </div>
 </template>
@@ -37,6 +41,12 @@ export default {
   methods:{
     addDiceToGame(diceRef){          
       this.diceToRoll.push(diceRef);      
+    },
+
+    rollAllDice(){
+      this.diceToRoll.forEach((dice, index) => {
+        this.$refs[index][0].roll();
+      });
     }
   }
 }

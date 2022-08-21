@@ -7,5 +7,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    .game-roller {
+      margin-top: $base3x;
+    }
   }
 }

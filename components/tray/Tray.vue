@@ -1,11 +1,6 @@
 <template>
   <div class="tray row row--justify-center">      
-    <Button number=4 @clicked="onButtonClick" />  
-    <Button number=6 @clicked="onButtonClick" />  
-    <Button number=8 @clicked="onButtonClick"/>  
-    <Button number=10 @clicked="onButtonClick" />  
-    <Button number=12 @clicked="onButtonClick" />  
-    <Button number=20 @clicked="onButtonClick" />  
+    <Button v-for="(dice, index) in diceToRoll" :key="index" :number="dice" @clicked="onButtonClick" />           
   </div>
 </template>
 
@@ -18,6 +13,7 @@ export default {
   data(){
     return{
       activeDice: null,
+      diceToRoll:[4,6,8,10,12,20],
     }
   },
 
