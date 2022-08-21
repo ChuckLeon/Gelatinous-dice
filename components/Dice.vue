@@ -1,17 +1,24 @@
 <template>
-  <div class="dice" @click="roll">
-      <div class="content">
-          <h3 class="text">D{{ max }}</h3>
-          <div :class="{numberContainer: true, rolling: isRolling}">
-            <p :class="{number: true, active: item === number}" v-for="item in shuffledArray" :key="item">{{ item }}</p>                    
-          </div>
-      </div>
-  </div>
+    <div class="dice-container">
+        <div class="dice" @click="roll">
+            <div class="content">
+                <h3 class="text">D{{ max }}</h3>
+                <div :class="{numberContainer: true, rolling: isRolling}">
+                    <p :class="{number: true, active: item === number}" v-for="item in shuffledArray" :key="item">{{ item }}</p>                    
+                </div>
+            </div>            
+        </div>
+        <button class="clear btn" @click="remove">-</button>
+    </div>
 </template>
 
 <script>
 export default {
     props:{
+        id: {
+            type: [String, Number],
+            required: true,
+        },
         max: {
             type: [String, Number],
             required: true,
@@ -53,6 +60,10 @@ export default {
                 this.isRolling = false;
                 this.number = parseInt(1 + (byteArray[0] % range));                
             }, this.rollTime);                                         
+        },
+
+        remove(){            
+            this.$emit('removeDice', this.id);
         }
     },
 

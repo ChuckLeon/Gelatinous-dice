@@ -5,7 +5,11 @@
     <div class="home__content">
       <h1 class="title">Gelatinous Dice</h1>
       <div :class="'grid grid--' + gridLength ">
-        <Dice v-for="(dice, index) in diceToRoll" :key="index" :max="dice" :ref="index" />           
+        <Dice v-for="(dice, index) in diceToRoll" :key="index" 
+          :id="index" 
+          :max="dice" 
+          :ref="index"
+          @removeDice="removeDiceFromGame" />           
       </div>
 
       <div class="btn game-roller" @click="rollAllDice" v-if="diceToRoll.length > 0">
@@ -41,6 +45,10 @@ export default {
   methods:{
     addDiceToGame(diceRef){          
       this.diceToRoll.push(diceRef);      
+    },
+
+    removeDiceFromGame(id){                
+      this.diceToRoll.splice(id, 1);
     },
 
     rollAllDice(){
