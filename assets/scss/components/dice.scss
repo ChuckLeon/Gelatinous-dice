@@ -3,13 +3,18 @@
 
   .clear {
     position: absolute;
-    top: -20px;
-    right: -20px;
+    top: -14px;
+    right: -14px;
     width: 30px;
     height: 30px;
     padding: unset;
     border-radius: 50%;
+    background-color: $background;
     z-index: 2;
+
+    &:hover {
+      background-color: $color-primary;
+    }
   }
 }
 
