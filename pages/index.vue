@@ -4,7 +4,7 @@
     
     <div class="home__content">
       <h1 class="title">Gelatinous Dice</h1>
-      <div class="grid grid--3">
+      <div :class="'grid grid--' + gridLength ">
         <Dice v-for="(dice, index) in diceToRoll" :key="index" :max="dice" :ref="index" />           
       </div>
     </div>
@@ -24,6 +24,13 @@ export default {
   data(){
     return{
       diceToRoll:[],
+      gridMaxLength: 4,
+    }
+  },
+
+  computed:{
+    gridLength(){
+      return this.diceToRoll.length < this.gridMaxLength ? this.diceToRoll.length : this.gridMaxLength;
     }
   },
 
