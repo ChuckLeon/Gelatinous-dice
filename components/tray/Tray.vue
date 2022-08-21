@@ -11,8 +11,7 @@ export default {
   components: { Button },
 
   data(){
-    return{
-      activeDice: null,
+    return{      
       diceToRoll:[4,6,8,10,12,20],
     }
   },

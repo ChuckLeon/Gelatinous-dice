@@ -4,6 +4,7 @@
     
     <div class="home__content">
       <h1 class="title">Gelatinous Dice</h1>
+      
       <div :class="'grid grid--' + gridLength ">
         <Dice v-for="(dice, index) in diceToRoll" :key="index" 
           :id="index" 
@@ -31,7 +32,7 @@ export default {
 
   data(){
     return{
-      diceToRoll:[],
+      diceToRoll:[], //will be managed by the Tray
       gridMaxLength: 4,
     }
   },
@@ -43,8 +44,8 @@ export default {
   },
 
   methods:{
-    addDiceToGame(diceRef){          
-      this.diceToRoll.push(diceRef);      
+    addDiceToGame(number){          
+      this.diceToRoll.push(number);      
     },
 
     removeDiceFromGame(id){                
