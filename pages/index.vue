@@ -5,12 +5,7 @@
     <div class="home__content">
       <h1 class="title">Gelatinous Dice</h1>
       <div class="grid grid--3">
-        <Dice max="4" ref="4" />
-        <Dice max="6" ref="6" />
-        <Dice max="8" ref="8" />
-        <Dice max="10" ref="10" />
-        <Dice max="12" ref="12" />
-        <Dice max="20" ref="20" />
+        <Dice v-for="(dice, index) in diceToRoll" :key="index" :max="dice" :ref="index" />           
       </div>
     </div>
   </div>
@@ -26,9 +21,15 @@ export default {
 
   components: { Dice, Tray },
 
+  data(){
+    return{
+      diceToRoll:[],
+    }
+  },
+
   methods:{
-    addDiceToGame(diceRef){
-      this.$refs[diceRef].roll();
+    addDiceToGame(diceRef){          
+      this.diceToRoll.push(diceRef);      
     }
   }
 }

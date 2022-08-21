@@ -1,7 +1,5 @@
 <template>
-  <div class="tray__btn" @click="click">
-      {{ number }}
-  </div>
+  <div class="tray__btn" @click="click">{{ number }}</div>
 </template>
 
 <script>
