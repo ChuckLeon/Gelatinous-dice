@@ -12,7 +12,10 @@
 <script>
 export default {
     props:{
-        max: String,
+        max: {
+            type: [String, Number],
+            required: true,
+        },
     },
 
     data(){
@@ -51,6 +54,10 @@ export default {
                 this.number = parseInt(1 + (byteArray[0] % range));                
             }, this.rollTime);                                         
         }
-    }
+    },
+
+    mounted() {
+        this.$on('submit', this.submit)
+    },
 }
 </script>

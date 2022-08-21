@@ -1,0 +1,27 @@
+.tray {
+  padding: $base;
+  width: 100%;
+  height: $base3x;
+
+  &__btn {
+    cursor: pointer;
+    height: $base2x;
+    width: $base2x;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px dashed $color-secondary;
+    border-radius: 4px;
+
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+      background-color: $color-primary;
+    }
+
+    &:not(:last-child) {
+      margin-right: $base;
+    }
+  }
+}
