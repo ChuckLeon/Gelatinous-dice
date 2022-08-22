@@ -1,7 +1,8 @@
 .tray {
   padding: $base;
-  width: 100%;
-  height: $base3x;
+  width: 75vw;
+  max-width: 800px;
+  margin: auto;
 
   &__btn {
     display: flex;
@@ -10,9 +11,12 @@
     height: $base3x;
     width: $base3x;
     padding: unset;
+    justify-self: center;
+  }
 
-    &:not(:last-child) {
-      margin-right: $base;
+  @include tablet {
+    @include mobile {
+      max-width: unset;
     }
   }
 }

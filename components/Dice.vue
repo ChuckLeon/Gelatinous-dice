@@ -8,7 +8,7 @@
                 </div>
             </div>            
         </div>
-        <button class="clear btn" @click="remove">-</button>
+        <button class="clear btn" @click="remove">x</button>
     </div>
 </template>
 
