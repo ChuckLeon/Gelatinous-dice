@@ -20,6 +20,8 @@ body {
   padding: 0;
   margin: 0;
   font-family: "roboto-mono", -apple-system, Roboto, sans-serif, serif;
+  background-color: $background;
+  color: $color-text;
 }
 
 a {
@@ -35,6 +37,7 @@ a {
   html {
     color-scheme: dark;
   }
+
   body {
     color: $color-text;
     background: $background;
