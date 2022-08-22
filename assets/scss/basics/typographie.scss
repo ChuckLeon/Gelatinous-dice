@@ -1,3 +1,5 @@
+@import "./mixins.scss";
+
 @font-face {
   font-family: "roboto-mono";
   src: url("../fonts/roboto/robotomono-regular.ttf") format("truetype");
@@ -6,4 +8,10 @@
 html,
 body {
   font-family: "roboto-mono", -apple-system, Roboto, sans-serif, serif;
+}
+
+h3 {
+  @include mobile {
+    margin: 5px 0;
+  }
 }
