@@ -6,6 +6,7 @@
   padding: $base $base3x;
   background-color: transparent;
   color: $color-text;
+  user-select: none;
 
   &:hover {
     background-color: $color-primary;
