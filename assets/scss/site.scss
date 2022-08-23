@@ -6,6 +6,7 @@
 @import "./basics/mixins.scss";
 @import "./basics/grid.scss";
 @import "./basics/buttons.scss";
+@import "./basics/wrapper.scss";
 
 //pages
 @import "./pages/home.scss";
@@ -14,6 +15,7 @@
 @import "./components/dice.scss";
 @import "./components/tray.scss";
 @import "./components/footer.scss";
+@import "./components/header.scss";
 
 html,
 body {
