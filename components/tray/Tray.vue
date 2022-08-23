@@ -1,5 +1,5 @@
 <template>
-  <div class="tray row row--justify-center">      
+  <div class="tray wrapper grid grid--6">      
     <Button v-for="(dice, index) in diceToRoll" :key="index" :number="dice" @clicked="onButtonClick" />           
   </div>
 </template>

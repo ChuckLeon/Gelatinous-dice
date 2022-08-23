@@ -1,0 +1,17 @@
+.wrapper {
+  padding: 0 $base4x;
+  margin: auto;
+  max-width: 1440px;
+
+  @include largeTablet {
+    padding: 0 $base3x;
+
+    @include tablet {
+      padding: 0 $base2x;
+
+      @include mobile {
+        padding: 0 $base;
+      }
+    }
+  }
+}
