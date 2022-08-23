@@ -6,4 +6,8 @@ footer {
     border-top: 1px dashed $color-secondary;
     justify-content: center;
   }
+
+  @include mobile {
+    text-align: center;
+  }
 }

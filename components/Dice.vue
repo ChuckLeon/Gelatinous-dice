@@ -1,5 +1,5 @@
 <template>
-    <div class="dice-container">
+    <div class="dice-container" :class="diceClass">
         <div class="dice" @click="roll">
             <div class="content">
                 <h3 class="text">D{{ max }}</h3>
@@ -8,7 +8,7 @@
                 </div>
             </div>            
         </div>
-        <button class="clear btn" @click="remove">-</button>
+        <button class="clear btn" @click="remove">x</button>
     </div>
 </template>
 
@@ -29,7 +29,8 @@ export default {
         return{
             number: 0,
             isRolling: false,
-            array: Array.from({length: this.max}, (_, i) => i + 1),            
+            array: Array.from({length: this.max}, (_, i) => i + 1),     
+            diceClass: '',       
         }
     },
 
@@ -63,12 +64,20 @@ export default {
         },
 
         remove(){            
-            this.$emit('removeDice', this.id);
+            this.diceClass = '';
+
+            setTimeout(() => {
+                this.$emit('removeDice', this.id);
+            }, 300);
         }
     },
 
     mounted() {
         this.$on('submit', this.submit)
+
+        setTimeout(() => {
+            this.diceClass = 'active';
+        }, 100);
     },
 }
 </script>

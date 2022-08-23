@@ -1,5 +1,13 @@
 .dice-container {
   position: relative;
+  opacity: 0;
+  transform: scale(0.4);
+  transition: all 300ms $transition-basic;
+
+  &.active {
+    opacity: 1;
+    transform: scale(1);
+  }
 
   .clear {
     position: absolute;
@@ -25,8 +33,8 @@
   min-height: 150px;
   border: 3px solid $color-primary;
   border-radius: 20px;
-  transition: all 300ms ease-in-out;
   user-select: none;
+  transition: all 300ms ease-in-out;
 
   @include mobile {
     width: 100px;
