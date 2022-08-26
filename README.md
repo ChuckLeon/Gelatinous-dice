@@ -1,5 +1,17 @@
 # gelatinous-dice
 
+## Here is my personnal roadmap for this project!
+
+* [x] Functional dice roller
+* [ ] Option to add modifiers to dice
+* [ ] Option to delete all dice 
+* [ ] Create logo and svg's for the dice 
+* [ ] Mobile: put the dice at the bottom of the screen 
+* [ ] Add dice history
+* [ ] Live chat option
+* [ ] DM option where you play music/display images
+
+
 ## Build Setup
 
 ```bash
