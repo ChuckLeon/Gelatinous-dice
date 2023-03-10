@@ -11,6 +11,7 @@
           :key="dice.id"
           :id="dice.id"
           :max="dice.max"
+          :ref="dice.id"
           @removeDice="removeDiceFromGame"
         />
       </div>
@@ -62,8 +63,8 @@ export default {
     },
 
     rollAllDice() {
-      this.diceToRoll.forEach((dice, index) => {
-        this.$refs[index][0].roll();
+      this.diceToRoll.forEach((dice) => {
+        this.$refs[dice.id][0].roll();
       });
     },
 
