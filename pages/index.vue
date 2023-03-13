@@ -4,7 +4,7 @@
     <History :rolls="rollsHistory" />
 
     <div class="home__content">
-      <h1 class="title">Gelatinous Dice</h1>
+      <h1>Gelatinous Dice</h1>
 
       <div :class="'grid grid--' + gridLength">
         <Dice
@@ -18,12 +18,9 @@
         />
       </div>
 
-      <div
-        class="btn game-roller"
-        @click="rollAllDice"
-        v-if="diceToRoll.length > 0"
-      >
-        Roll all!
+      <div class="row game-controls" v-if="diceToRoll.length > 0">
+        <button class="btn" @click="rollAllDice">Roll all!</button>
+        <button class="btn" @click="clearAllDice">Clear all</button>
       </div>
     </div>
   </div>
@@ -73,6 +70,12 @@ export default {
     rollAllDice() {
       this.diceToRoll.forEach((dice) => {
         this.$refs[dice.id][0].roll();
+      });
+    },
+
+    clearAllDice() {
+      this.diceToRoll.forEach((dice) => {
+        this.$refs[dice.id][0].remove();
       });
     },
 
