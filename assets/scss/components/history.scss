@@ -1,0 +1,33 @@
+.history {
+  position: absolute;
+  bottom: 10px;
+  right: $base;
+  width: 300px;
+  height: 150px;
+  padding: 10px $base;
+  border: 1px dashed $color-secondary;
+  border-radius: 10px;
+  box-shadow: inset 0px -12px 18px -3px rgba(132, 169, 140, 0.1);
+
+  overflow-y: scroll;
+
+  z-index: 999;
+
+  &__title {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 2px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    display: none;
+  }
+}

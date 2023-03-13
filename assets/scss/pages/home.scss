@@ -1,4 +1,6 @@
 .home {
+  position: relative;
+
   &__content {
     min-height: calc(100vh - 200px);
     padding: 4rem 0;

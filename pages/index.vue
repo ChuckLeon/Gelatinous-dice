@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <Tray @addToGame="addDiceToGame" />
+    <History :rolls="rollsHistory" />
 
     <div class="home__content">
       <h1 class="title">Gelatinous Dice</h1>
@@ -13,6 +14,7 @@
           :max="dice.max"
           :ref="dice.id"
           @removeDice="removeDiceFromGame"
+          @handleDiceRoll="handleDiceRoll"
         />
       </div>
 
@@ -30,6 +32,10 @@
 <script>
 import Dice from "../components/Dice.vue";
 import Tray from "../components/tray/Tray.vue";
+import History from "../components/History.vue";
+
+import Helper from "../scripts/helpers";
+
 export default {
   head: {
     title: "Gelatinous Dice",
@@ -40,6 +46,7 @@ export default {
   data() {
     return {
       diceToRoll: [], //will be managed by the Tray
+      rollsHistory: [],
       gridMaxLength: 4,
     };
   },
@@ -54,7 +61,8 @@ export default {
 
   methods: {
     addDiceToGame(number) {
-      this.diceToRoll.push({ id: this.generateGuid(), max: number });
+      const guid = Helper.GenerateGuid();
+      this.diceToRoll.push({ id: guid, max: number });
     },
 
     removeDiceFromGame(id) {
@@ -68,29 +76,8 @@ export default {
       });
     },
 
-    generateGuid() {
-      var d = new Date().getTime(); //Timestamp
-      var d2 =
-        (typeof performance !== "undefined" &&
-          performance.now &&
-          performance.now() * 1000) ||
-        0; //Time in microseconds since page-load or 0 if unsupported
-      return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
-        /[xy]/g,
-        function (c) {
-          var r = Math.random() * 16; //random number between 0 and 16
-          if (d > 0) {
-            //Use timestamp until depleted
-            r = (d + r) % 16 | 0;
-            d = Math.floor(d / 16);
-          } else {
-            //Use microseconds since page-load if supported
-            r = (d2 + r) % 16 | 0;
-            d2 = Math.floor(d2 / 16);
-          }
-          return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
-        }
-      );
+    handleDiceRoll(number) {
+      this.rollsHistory.push(number);
     },
   },
 };
