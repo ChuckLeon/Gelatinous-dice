@@ -1,26 +1,33 @@
 <template>
   <div class="home">
     <Tray @addToGame="addDiceToGame" />
-    <History :rolls="rollsHistory" />
 
-    <div class="home__content">
-      <h1>Gelatinous Dice</h1>
+    <div class="wrapper">
+      <div class="home__content">
+        <h1>Gelatinous Dice</h1>
 
-      <div :class="'grid grid--' + gridLength">
-        <Dice
-          v-for="dice in diceToRoll"
-          :key="dice.id"
-          :id="dice.id"
-          :max="dice.max"
-          :ref="dice.id"
-          @removeDice="removeDiceFromGame"
-          @handleDiceRoll="handleDiceRoll"
+        <div :class="'grid grid--' + gridLength">
+          <Dice
+            v-for="dice in diceToRoll"
+            :key="dice.id"
+            :id="dice.id"
+            :max="dice.max"
+            :ref="dice.id"
+            @removeDice="removeDiceFromGame"
+            @handleDiceRoll="handleDiceRoll"
+          />
+        </div>
+
+        <div class="row game-controls" v-if="diceToRoll.length > 0">
+          <button class="btn" @click="rollAllDice">Roll all!</button>
+          <button class="btn" @click="clearAllDice">Clear all</button>
+        </div>
+
+        <History
+          :rolls="rollsHistory"
+          v-if="rollsHistory.length > 0"
+          ref="history"
         />
-      </div>
-
-      <div class="row game-controls" v-if="diceToRoll.length > 0">
-        <button class="btn" @click="rollAllDice">Roll all!</button>
-        <button class="btn" @click="clearAllDice">Clear all</button>
       </div>
     </div>
   </div>

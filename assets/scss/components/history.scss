@@ -1,10 +1,9 @@
 .history {
-  position: absolute;
-  bottom: 10px;
-  right: $base;
+  align-self: flex-start;
   width: 300px;
-  height: 150px;
+  height: 125px;
   padding: 10px $base;
+  margin-top: auto;
   border: 1px dashed $color-secondary;
   border-radius: 10px;
   box-shadow: inset 0px -12px 18px -3px rgba(132, 169, 140, 0.1);
