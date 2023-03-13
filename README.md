@@ -3,11 +3,11 @@
 ## Here is my personnal roadmap for this project!
 
 - [x] Functional dice roller
+- [x] See dice roll history
+- [x] Option to delete all dice
 - [ ] Option to add modifiers to dice
-- [ ] Option to delete all dice
 - [ ] Create logo and svg's for the dice
 - [ ] Mobile: put the dice at the bottom of the screen
-- [ ] Add dice history
 - [ ] Live chat option
 - [ ] DM option where you play music/display images
 

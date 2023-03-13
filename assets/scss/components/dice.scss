@@ -32,7 +32,7 @@
   width: 200px;
   min-height: 150px;
   border: 3px solid $color-primary;
-  border-radius: 20px;
+  border-radius: $base;
   user-select: none;
   transition: all 300ms ease-in-out;
 

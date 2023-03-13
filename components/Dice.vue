@@ -65,6 +65,8 @@ export default {
       setTimeout(() => {
         this.isRolling = false;
         this.number = parseInt(1 + (byteArray[0] % range));
+
+        this.$emit("handleDiceRoll", this.number);
       }, this.rollTime);
     },
 
