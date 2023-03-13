@@ -1,0 +1,32 @@
+.history {
+  align-self: flex-start;
+  width: 300px;
+  height: 125px;
+  padding: 10px $base;
+  margin-top: auto;
+  border: 1px dashed $color-secondary;
+  border-radius: 10px;
+  box-shadow: inset 0px -12px 18px -3px rgba(132, 169, 140, 0.1);
+
+  overflow-y: scroll;
+
+  z-index: 999;
+
+  &__title {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: 2px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    display: none;
+  }
+}
