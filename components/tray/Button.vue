@@ -4,17 +4,17 @@
 
 <script>
 export default {
-    props:{
-        number: {
-            type: [String, Number],
-            required: true,
-        }
+  props: {
+    number: {
+      type: [String, Number],
+      required: true,
     },
+  },
 
-    methods:{
-        click(){
-            this.$emit('clicked', this.number)
-        },
-    }
-}
+  methods: {
+    click() {
+      this.$emit("clicked", this.number);
+    },
+  },
+};
 </script>
