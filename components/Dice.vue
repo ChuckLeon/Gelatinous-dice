@@ -14,7 +14,16 @@
         </div>
       </div>
     </div>
-    <button class="clear btn" @click="remove">x</button>
+    <button class="clear btn" @click="remove">
+      <svg viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M1.49383 1L41 40.5062M1 39.5858L39.092 1.49383"
+          stroke="#84A98C"
+          stroke-width="5"
+          stroke-linecap="round"
+        />
+      </svg>
+    </button>
   </div>
 </template>
 

@@ -4,8 +4,8 @@
   height: 125px;
   padding: 10px $base;
   margin-top: auto;
-  border: 1px dashed $color-secondary;
-  border-radius: 10px;
+  border: 1px solid $color-secondary;
+  border-radius: $border;
   box-shadow: inset 0px -12px 18px -3px rgba(132, 169, 140, 0.1);
 
   overflow-y: scroll;
